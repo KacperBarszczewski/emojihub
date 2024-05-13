@@ -51,7 +51,7 @@ Each endpoint can be supplemented by a path to a specific category or group:
 | ------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | smileys-and-people | body, cat-face, clothing, creature-face, emotion, face-negative, face-neutral, face-positive, face-positive, face-role, face-sick, family, monkey-face, person, person-activity, person-gesture, person-role, skin-tone |
 | animals-and-nature | animal-amphibian, animal-bird, animal-bug, animal-mammal, animal-marine, animal-reptile, plant-flower, plant-other                                                                                                      |
-| food-and-drink     | dishware, drink, food-asian, food-fruit, food-prepared, food-sweat, food-vegetable                                                                                                                                      |
+| food-and-drink     | dishware, drink, food-asian, food-fruit, food-prepared, food-sweet, food-vegetable                                                                                                                                      |
 | travel-and-places  | travel-and-places                                                                                                                                                                                                       |
 | activities         | activities                                                                                                                                                                                                              |
 | objects            | objects                                                                                                                                                                                                                 |
@@ -81,7 +81,11 @@ https://emojihub.yurace.pro/api/all/group/animal-bird
 1. Clone this repository:
 
 ```sh
-git clone -b go-version --single-branch https://github.com/cheatsnake/emojihub.git
+git clone https://github.com/cheatsnake/emojihub.git
+```
+
+```sh
+cd ./emojihub
 ```
 
 2. Inside the project, run this command to install the necessary packages:
