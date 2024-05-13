@@ -16,6 +16,7 @@ func (s *Server) Emojis(w http.ResponseWriter, r *http.Request, _ httprouter.Par
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	emojis := s.Store.GetAll()
 	json, _ := json.Marshal(emojis)
@@ -30,6 +31,7 @@ func (s *Server) EmojisByCategory(w http.ResponseWriter, r *http.Request, ps htt
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	category := strings.Replace(ps.ByName("category"), "-", " ", -1)
 	if !slices.Contains(s.Store.Categories, category) {
@@ -50,6 +52,7 @@ func (s *Server) EmojisByGroup(w http.ResponseWriter, r *http.Request, ps httpro
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	group := strings.Replace(ps.ByName("group"), "-", " ", -1)
 	if !slices.Contains(s.Store.Groups, group) {
@@ -70,6 +73,7 @@ func (s *Server) RandomEmoji(w http.ResponseWriter, r *http.Request, _ httproute
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	emoji := s.Store.GetRandom()
 	json, _ := json.Marshal(emoji)
@@ -84,6 +88,7 @@ func (s *Server) RandomEmojiByCategory(w http.ResponseWriter, r *http.Request, p
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	category := strings.Replace(ps.ByName("category"), "-", " ", -1)
 	if !slices.Contains(s.Store.Categories, category) {
@@ -104,6 +109,7 @@ func (s *Server) RandomEmojiByGroup(w http.ResponseWriter, r *http.Request, ps h
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	group := strings.Replace(ps.ByName("group"), "-", " ", -1)
 	if !slices.Contains(s.Store.Groups, group) {
